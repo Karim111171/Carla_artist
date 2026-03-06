@@ -1,0 +1,125 @@
+html, body {
+  height: 100%;           /* full height */
+  margin: 0;              /* remove default margin */
+}
+
+body{
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #111111;
+  display: flex;
+  flex-direction: column;
+  /*font-family: Helvetica, Arial, sans-serif;*/
+  margin:0;
+  background:white;
+  padding-left:2cm;   /* extra left margin */
+  padding-right:2cm;  /* extra right margin */
+}
+
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:30px 2cm;  /* 30px top/bottom, 2cm left/right */
+}
+
+main, .about, .exhibitions {
+  flex: 1;  /* takes remaining space, pushes footer to bottom */
+}
+
+.logo{
+  font-size:24px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400; /* Regular */
+  color: #111111; /* same dark text for consistency */
+}
+
+.bold-year {
+  font-weight: bold;
+}
+
+nav a{
+margin-left:20px;
+text-decoration:none;
+color:black;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+padding:40px;
+}
+
+.gallery-item{
+display:flex;
+flex-direction:column;
+}
+
+.gallery-img{
+width:100%;
+height:300px;
+object-fit:cover;
+cursor:pointer;
+}
+
+.title{
+font-size:14px;
+margin-top:8px;
+text-align:left;
+}
+
+.about{
+max-width:700px;
+margin:auto;
+padding:40px;
+}
+
+.aboutcontact {
+text-align: center;
+}
+
+footer{
+padding:30px;
+text-align:center;
+font-size:12px;
+}
+#lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:1000;
+}
+
+#lightbox img{
+max-width:90%;
+max-height:90%;
+}
+
+#close{
+position:absolute;
+top:30px;
+right:40px;
+font-size:40px;
+color:white;
+cursor:pointer;
+}
+
+
+
+.exhibitions {
+    padding-left: 2cm;
+}
+
+a[href^="mailto:"] {
+  color: inherit;        /* same color as surrounding text */
+  text-decoration: none; /* remove underline */
+  font-weight: inherit;  /* match surrounding font weight */
+  cursor: pointer;       /* shows pointer on hover, indicates it’s clickable */
+}
+

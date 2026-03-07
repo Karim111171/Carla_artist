@@ -1,6 +1,8 @@
+/* ---------- Base Layout ---------- */
+
 html, body {
-  height: 100%;           /* full height */
-  margin: 0;              /* remove default margin */
+  height: 100%;
+  margin: 0;
 }
 
 body{
@@ -8,160 +10,175 @@ body{
   color: #111111;
   display: flex;
   flex-direction: column;
-  /*font-family: Helvetica, Arial, sans-serif;*/
-  margin:0;
-  background:white;
-  /*background: url("../images/GRAIN2.jpg") no-repeat center center fixed;*/
-  padding-left:2cm;   /* extra left margin */
-  padding-right:2cm;  /* extra right margin */
+  background: white;
+
+  padding-left: 40px;
+  padding-right: 40px;
 }
+
+/* ---------- Header ---------- */
 
 header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:30px 2cm;  /* 30px top/bottom, 2cm left/right */
-}
-
-main, .about, .exhibitions {
-  flex: 1;  /* takes remaining space, pushes footer to bottom */
+  padding:30px 0;
 }
 
 .logo{
   font-size:24px;
   font-family: "Inter", sans-serif;
-  font-weight: 400; /* Regular */
-  color: #111111; /* same dark text for consistency */
-}
-
-.bold-year {
-  font-weight: bold;
+  font-weight:400;
 }
 
 nav a{
-margin-left:20px;
-text-decoration:none;
-color:black;
+  margin-left:20px;
+  text-decoration:none;
+  color:black;
 }
 
+.bold-year{
+  font-weight:bold;
+}
+
+/* ---------- Main Sections ---------- */
+
+main,
+.about,
+.exhibitions{
+  flex:1;
+}
+
+/* ---------- Gallery ---------- */
+
 .gallery{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-padding:40px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  padding:40px 0;
 }
 
 .gallery-item{
-display:flex;
-flex-direction:column;
+  display:flex;
+  flex-direction:column;
 }
 
 .gallery-img{
-width:100%;
-height:300px;
-object-fit:cover;
-cursor:pointer;
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  cursor:pointer;
 }
 
 .title{
-font-size:14px;
-margin-top:8px;
-text-align:left;
+  font-size:14px;
+  margin-top:8px;
 }
+
+/* ---------- About Page ---------- */
 
 .about{
-max-width:700px;
-margin:auto;
-padding:40px;
+  max-width:700px;
+  margin:auto;
+  padding:40px 0;
 }
 
-.aboutcontact {
-text-align: center;
+.aboutcontact{
+  text-align:center;
 }
+
+/* ---------- Exhibitions ---------- */
+
+.exhibitions{
+  padding-left:40px;
+}
+
+/* ---------- Footer ---------- */
 
 footer{
-padding:30px;
-text-align:center;
-font-size:12px;
+  padding:30px 0;
+  text-align:center;
+  font-size:12px;
 }
+
+/* ---------- Lightbox ---------- */
+
 #lightbox{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.9);
-display:none;
-align-items:center;
-justify-content:center;
-z-index:1000;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:1000;
 }
 
 #lightbox img{
-max-width:90%;
-max-height:90%;
+  max-width:90%;
+  max-height:90%;
 }
 
 #close{
-position:absolute;
-top:30px;
-right:40px;
-font-size:40px;
-color:white;
-cursor:pointer;
+  position:absolute;
+  top:30px;
+  right:40px;
+  font-size:40px;
+  color:white;
+  cursor:pointer;
 }
 
+/* ---------- Email Link Style ---------- */
 
-
-.exhibitions {
-    padding-left: 2cm;
+a[href^="mailto:"]{
+  color:inherit;
+  text-decoration:none;
+  font-weight:inherit;
+  cursor:pointer;
 }
 
-a[href^="mailto:"] {
-  color: inherit;        /* same color as surrounding text */
-  text-decoration: none; /* remove underline */
-  font-weight: inherit;  /* match surrounding font weight */
-  cursor: pointer;       /* shows pointer on hover, indicates it’s clickable */
-}
+/* ---------- Tablet ---------- */
 
-@media (max-width: 900px) {
+@media (max-width: 900px){
+
+  body{
+    padding-left:25px;
+    padding-right:25px;
+  }
 
   .gallery{
     grid-template-columns:repeat(2,1fr);
   }
 
-  body{
-    padding-left:6px;
-    padding-right:6px;
-  }
-
 }
 
-@media (max-width: 600px) {
+/* ---------- Mobile ---------- */
+
+@media (max-width: 600px){
 
   body{
-    padding-left:3px;
-    padding-right:3px;
+    padding-left:18px;
+    padding-right:18px;
   }
 
   header{
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
   }
 
   nav{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
   }
 
   nav a{
-    margin: 0;
-    font-size: 14px;
+    margin:0;
+    font-size:14px;
   }
-
-}
 
   .gallery{
     grid-template-columns:1fr;
@@ -176,3 +193,4 @@ a[href^="mailto:"] {
     padding:30px 0;
   }
 
+}
